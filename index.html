@@ -23,20 +23,24 @@
 
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
+      let player;
+
       function onYouTubeIframeAPIReady() {
-        new YT.Player('player', {
+        player = new YT.Player('player', {
           width: '100%',
           height: '100%',
           videoId: 'GlGkFWPKomU',
           playerVars: {
             playsinline: 1,
-            autoplay: 0,
+            autoplay: 1,
+            mute: 1,
+            controls: 1,
             rel: 0,
             origin: 'https://kaezhar97.github.io'
           },
           events: {
             onReady: function(event) {
-              // event.target.playVideo(); // optional later
+              event.target.playVideo();
             }
           }
         });
